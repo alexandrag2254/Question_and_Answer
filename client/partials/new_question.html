@@ -1,0 +1,16 @@
+<style type="text/css">
+      html {
+        width:970px;
+        margin:0 auto;
+      }
+</style>
+<div ng-controller="NewQuestion">
+	<!-- errors display here -->
+  <h5 ng-bind="errors.message" style="color: red"></h5>
+  <form class="container-fluid" class="form-inline">
+	    <p>Question: <textarea ng-model="new_question.question"></textarea></p>
+	    <p>Description (optional): <textarea ng-model="new_question.description"></textarea></p>
+	    <button><a ng-href="#/">Cancel</a></button>
+	    <input type="submit" value="Submit" class="btn btn-primary" ng-click="addQuestion()">
+  </form>
+</div>

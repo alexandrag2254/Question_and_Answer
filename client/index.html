@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Blackbelt</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js'></script>
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+  <!-- requiring the angular page -->
+  <script type="text/javascript" src="app.js"> </script>
+  <script type="text/javascript">
+  //prompting in the index before getting to the partial views
+    var person = prompt("Please enter your name!");
+    var message = false;
+  </script>
+</head>
+<body ng-App="questions">
+  <h4><a href="#/">Dashboard</a> | <a href="#/new_question">Add a Question</a> | <a href="#/">Logout</a></h4>
+  <!-- this is where the partials show up -->
+  <div ng-view=""></div>
+</body>
+</html>

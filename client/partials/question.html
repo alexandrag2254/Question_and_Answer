@@ -1,0 +1,30 @@
+<style type="text/css">
+      td, th {
+        padding:5px;
+        border:gray solid 2px;
+      }
+      html {
+        width:970px;
+        margin:0 auto;
+      }
+      .center {
+         text-align: center;
+      }
+</style>
+<div ng-controller="Answers">
+
+    <h1>Question: {{answers.question}}</h1>
+    <h4>Description: {{answers.description}}</h4><br><br>
+
+      <table class="table table-hover">
+          <tr ng-repeat="answer in answers.answers | orderBy: '-likes'">
+              <td>
+                  <p><em>{{answer.name}}:</em></p>
+                  <h4 ng-bind="answer.answer"></h4>
+                  <h5 ng-bind="answer.details"></h5>
+              </td>
+              <td class="center">{{answer.likes}}   Likes</td>
+              <td class="center"><button ng-click="likeAnswer(answer._id)" class="btn btn-primary">Like!</button></td>
+          </tr>
+      </table>
+</div>

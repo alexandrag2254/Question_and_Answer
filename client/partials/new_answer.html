@@ -1,0 +1,20 @@
+<style type="text/css">
+      html {
+        width:970px;
+        margin:0 auto;
+      }
+</style>
+<div ng-controller="NewAnswer">
+
+	  <h1>Question: {{question.question}}</h1>
+      <h4>Description: {{question.description}}</h4>
+	  <!-- errors -->
+	  <h5 ng-bind="errors.message" style="color: red"></h5>
+	  
+	  <form class="form-inline">
+		    <p>Your Answer: <textarea ng-model="new_answer.answer"></textarea></p>
+		    <p>Supporting details for your answer (optional): <textarea ng-model="new_answer.details"></textarea></p>
+		    <button><a ng-href="#/">Cancel</a></button>
+		    <input type="submit" value="Submit" class="btn btn-primary" ng-click="addAnswer(question._id)">
+	  </form>
+</div>

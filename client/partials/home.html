@@ -1,0 +1,40 @@
+<style type="text/css">
+  td {
+    padding:5px;
+    border:gray solid 2px;
+  }
+  html {
+    width:970px;
+    margin:0 auto;
+  }
+  .center {
+    text-align: center;
+  }
+</style>
+<script type="text/javascript">
+  //if question was successfully sent this should alert the user
+    if(message === true) {
+        alert('Question successfully added!');
+        message = false; // unset message to avoid further alerts
+      }
+</script>
+<div ng-controller="Home"><br><br>
+
+  <input class="col-sm-2" class="search" type="text" ng-model="filter_question" placeholder="Search..."><span ng-bind="filter_question"></span><br><br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th class="center">Answers</th>
+        <th class="center">Action</th>
+      </tr>
+    </thead>
+      <tbody>
+        <tr ng-repeat="question in questions | filter: filter_question | orderBy: 'created_at'"> 
+          <td ng-bind="question.question"></td>
+          <td class="center" ng-bind="question.answers.length"></td>
+          <td class="center"><a href="#/question/{{question._id}}">Show</a> | <a href="#/question/{{question._id}}/new_answer"> Answer</a></td>
+        </tr>
+      </tbody>
+  </table>
+</div>
